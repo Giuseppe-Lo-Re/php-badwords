@@ -14,32 +14,28 @@ Stampare di nuovo il paragrafo e la sua lunghezza,
 dopo aver sostituito con tre asterischi (***) tutte le occorrenze della parola da censurare. -->
 
 <?php
-
 // Creo una variabile con la mia citazione:
 $MyCitation = '«Il coraggio di essere felici implica anche il coraggio di essere disapprovati.
 Quando conquisti quel coraggio, le tue relazioni interpersonali si alleggeriscono all’istante.»';
 ?>
 
-
 <div>
     <h4>
-        Questa è la citazione di un libro che sto leggendo [Ichiro Kishimi, Fumitake Koga, "Il coraggio di non piacere"]:
+        Questa è la citazione di un libro che sto leggendo
+        (<em style="color:#0000FF">Ichiro Kishimi, Fumitake Koga, "Il coraggio di non piacere"</em>):
     </h4>
 
     <!-- Stampo a schermo il paragrafo: -->
     <?php echo $MyCitation; ?> 
 
                                   <!-- Stampo a schermo la sua lunghezza: -->
-    La sua lunghezza complessiva è di <?php echo strlen($MyCitation);; ?> caratteri.
+    La sua lunghezza complessiva è di <em style="color:#228B22"><?php echo strlen($MyCitation);; ?> caratteri.</em> 
 </div> 
 
-
 <?php
-
 // Definisco la parola da censurare, passata dall'utente tramite parametro GET: 
 $badword = $_GET['badword'];
 ?>
-
 
 <div>
     <h4>
@@ -51,7 +47,6 @@ $badword = $_GET['badword'];
 <!-- Stampo il paragrafo e la sua lunghezza, dopo aver sostituito con tre asterischi (***) 
 la parola censurata tutte le volte che si presenta: -->
 <?php echo str_replace($badword, '***', $MyCitation); ?>
-
 </div>
 </body>
 </html>
